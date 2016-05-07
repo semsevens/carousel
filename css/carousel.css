@@ -1,0 +1,38 @@
+/* carousel  */
+
+.carousel-container {
+  width: 80%;
+  margin: auto;
+  font-size: 0;
+}
+
+.carousel-picture-list {
+  display: inline-block;
+  width: 80%;
+  vertical-align: top;
+}
+
+.carousel-picture {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.carousel-picture-active {
+  display: block;
+}
+
+.carousel-button-list {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+}
+
+.carousel-button {
+  width: 100%;
+  border: solid 4px white;
+}
+
+.carousel-button-active {
+  border: solid 4px #92D787;
+}

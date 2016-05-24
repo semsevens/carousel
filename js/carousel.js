@@ -107,10 +107,36 @@ var carousel = (function() {
     };
 }());
 
+var throttle = function(fn, interval) {
+    var __self = fn,
+        timer,
+        firstTime = true;
+
+    return function() {
+        var args = arguments,
+            __me = this;
+
+        if (firstTime) {
+            __self.apply(__me, args);
+            return firstTime = false;
+        }
+
+        if (timer) {
+            return false;
+        }
+
+        timer = setTimeout(function() {
+            clearTimeout(timer);
+            timer = null;
+            __self.apply(__self, args);
+        }, interval || 500);
+    };
+};
+
 window.onload = function() {
     carousel.init();
 };
 
-$(window).resize(function() {
+window.onresize = throttle(function() {
     carousel.resizePictures();
 });
